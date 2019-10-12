@@ -1,0 +1,30 @@
+
+
+//カンプのインナー横幅
+$inner-width: 1000;
+//スマホ時の左右のpadding
+$wrapper-padding: 15;
+
+//メディアクエリの変数
+$breakpoints: (
+  xs: 0,
+  sm: 720,
+  md: $inner-width,
+  lg: 1200,
+);
+
+//0〜374.98以下は縮小
+//375〜719.98までSP
+//720〜$inner-widthまでがTAB
+//$inner-width〜1200までがPC
+//1200以上がでかいPC
+
+
+//zindexを一括管理
+$zindex: (
+  forefront: 9001,
+  modal: (
+    base: 9000,
+  ),
+  gnav: 900,
+);
