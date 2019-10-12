@@ -190,9 +190,9 @@ var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
 module.exports = {
-  "test": "_test_d94d0",
-  "hoge": "_hoge_d94d0",
-  "fuga": "_fuga_d94d0"
+  "a": "_a_de720",
+  "wrapper": "_wrapper_de720",
+  "test": "_test_de720"
 };
 },{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -222,7 +222,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64856" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64382" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
