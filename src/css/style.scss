@@ -1,7 +1,8 @@
 .test {
   .hoge {
-    .fuga {
-      display: grid;
-    }
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(5, auto);
   }
 }
