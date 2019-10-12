@@ -29,7 +29,7 @@ gitignore/
 Thumbs.db
 
 # Files
-*.html
-*.js
-*.css
-!src
+# *.html
+# *.js
+# *.css
+# !src
