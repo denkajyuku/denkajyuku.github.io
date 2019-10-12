@@ -1,0 +1,35 @@
+# map
+*.map
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Dependency directories
+dist/
+node_modules/
+gitignore/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Cache
+.cache
+
+# System
+.DS_Store
+.sass-cache
+Thumbs.db
+
+# Files
+*.html
+*.js
+*.css
+!src
