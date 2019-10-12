@@ -1,3 +1,13 @@
+//bases
+@import "foundation/_variables";
+@import "foundation/_colors";
+@import "foundation/_fonts";
+@import "foundation/_animation";
+@import "foundation/_functions";
+@import "foundation/_mixins";
+@import "foundation/_reset";
+@import "foundation/_base";
+
 .test {
   .hoge {
     display: grid;
