@@ -1,0 +1,71 @@
+@function px($target, $px: 1) {
+  @return $target * ($px * 1px);
+}
+
+@function em($target, $em: 1) {
+  @return $target * ($rem * 0.1em);
+}
+
+@function rem($target, $rem: 1) {
+  @return $target * ($rem * 0.1rem);
+}
+
+@function letter-em($px) {
+  @if $px == 1 or 1 > $px {
+    @return $px * 1em;
+  }
+  @if $px > 1 {
+    @return ($px / 1000) * 1em;
+  }
+}
+@function line-height($line: 24,$px: 16) {
+  @if $line == 5 or 5 > $line {
+    @return $line;
+  }
+  @if $line > 5 {
+    @return ($line / $px);
+  }
+}
+
+@function bp($key) {
+  @return map-get($breakpoints, $key);
+}
+
+@function number($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function color($palette-group, $palette-type: 500) {
+  @return map-get(map-get($colors, $palette-group), $palette-type);
+}
+
+@function margin($lineHeight, $fontSize) {
+  @return px(($fontSize * $lineHeight - $fontSize) / 2);
+}
+
+
+//zindexの関数
+@function map-deep-get($map, $keys...) {
+  $value: $map;
+  @each $key in $keys {
+    $value: map-get($value, $key);
+  }
+
+  @return $value;
+}
+
+//zindexの関数
+@function zindex($keys...) {
+  @if not variable-exists(zindex) {
+    @error "`$zindex` is not defined.";
+  }
+
+  @if not function-exists(map-deep-get) {
+    @error "`map-deep-get()` is not available.";
+  }
+
+  @return map-deep-get($zindex, $keys...);
+}
