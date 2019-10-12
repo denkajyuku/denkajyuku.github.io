@@ -1,0 +1,29 @@
+:root {
+  //htmlにブレークポイント表示用
+  --breakpoint-sm: #{px(map-get($breakpoints, xs ))};
+  --breakpoint-sm: #{px(map-get($breakpoints, sm ))};
+  --breakpoint-md: #{px(map-get($breakpoints, md ))};
+  --breakpoint-lg: #{px(map-get($breakpoints, lg ))};
+}
+
+html {
+}
+
+body {
+}
+
+@media (max-width: 374.98px) {
+  html {
+    //iPhoneSEでは縮小するように
+    width: 375px !important;
+  }
+}
+
+.wrapper {
+  //innerがサイドタッチしないように予めスマホ時の左右padding分設定
+  max-width: px($inner-width + ($wrapper-padding * 2));
+  margin: 0 auto;
+  @if $wrapper-padding > 0 {
+    padding: 0 px($wrapper-padding) 0;
+  }
+}
