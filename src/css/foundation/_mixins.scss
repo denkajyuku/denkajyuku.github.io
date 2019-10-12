@@ -1,0 +1,216 @@
+//IE専用のブラウザハック
+@mixin iehack {
+  @at-root _:-ms-fullscreen, :root & {
+    @content;
+  }
+}
+
+@mixin ie {
+  @at-root body.ie & {
+    @content;
+  }
+}
+
+//ホバーの設定
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+  @include iehack {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin hovertext($opacity: 0.7, $transition: 0.7s) {
+  transition: opacity $transition;
+  @include hover {
+    opacity: $opacity;
+  }
+}
+
+@mixin hoverimg($gizi:before) {
+  &::#{$gizi} {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    transition: background-color 0.5s;
+    z-index: 1;
+  }
+  @include hover {
+    &::#{$gizi} {
+      background: rgba(#fff,.5);
+    }
+  }
+}
+
+//メディアクエリの設定
+@mixin media($breakpoint: 'sm', $key: min) {
+  @if $key == max
+  {
+    @media (#{$key}-width: (px(map-get( $breakpoints, $breakpoint )) - 0.02px)) {@content;}
+  }
+  @if $key == min
+  {
+    @media (#{$key}-width: px(map-get( $breakpoints, $breakpoint ))) {@content;}
+  }
+}
+
+//親要素にrelative必須
+@mixin position($position: xy) {
+  position: absolute;
+  @if $position == xy
+  {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  @if $position == x
+  {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @if $position == y
+  {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+//padding-topで領域を確保
+@mixin pt($yoko: 16,$tate: 9) {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  &::before {
+    display: block;
+    width: 100%;
+    padding-top: percentage($tate/$yoko);
+    content: '';
+  }
+}
+
+//文字の左右に水平線を引くmixin
+@mixin hr($bd-width: 1, $bd-color: #000, $bd-min-width: 30, $db-distance: 10) {
+  display: flex;
+  align-items: center;
+  &::before,&::after {
+    display: block;
+    flex: 1 0 px($bd-min-width);
+    content: '';
+    border-top: px($bd-width) solid $bd-color;
+  }
+  &::before {
+    margin-right: px($db-distance);
+  }
+  &::after {
+    margin-left: px($db-distance);
+  }
+}
+
+//ストライプ
+@mixin stripe($deg: 0, $color1: rgba(red,0.4), $color2: rgba(blue,.4),$size: 50) {
+  $naname: 45, 135, 225, 315, -45, -135, -225, -315;
+  $yoko: 0, 90, 180, 270, 360, -90, -180, -270, -360;
+  @if index($naname, $deg)
+  {
+    background-image: repeating-linear-gradient(
+      ($deg * 1deg),
+      $color1 0,
+      $color1 (percentage(1/4) - 0.05%),
+      $color2 percentage(1/4),
+      $color2 (percentage(2/4) - 0.05%),
+      $color1 percentage(2/4),
+      $color1 (percentage(3/4) - 0.05%),
+      $color2 percentage(3/4),
+      $color2 percentage(4/4)
+    );
+    background-repeat: repeat;
+    background-size: px($size) px($size);
+  }
+  @if index($yoko, $deg)
+  {
+    background-image: repeating-linear-gradient(
+      ($deg * 1deg),
+      $color1 0,
+      $color1 (percentage(1/2) - 0.05%),
+      $color2 percentage(1/2),
+      $color2 percentage(2/2)
+    );
+    background-repeat: repeat;
+    background-size: px($size) px($size);
+  }
+}
+
+//flexの上下左右中央
+@mixin flex($position:xy) {
+  display: flex;
+  @if $position == xy
+  {
+    justify-content: center;
+    align-items: center;
+  }
+  @if $position == x
+  {
+    justify-content: center;
+  }
+  @if $position == y
+  {
+    align-items: center;
+  }
+}
+
+
+@mixin listmark($gap) {
+  position: relative;
+  padding-left: em($gap + 1,10);
+  > span.list-mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: em($gap + 1,10);
+    text-align: center;
+    @content;
+  }
+}
+
+@mixin fz($min-font-size: 14, $max-font-size: 16, $breakpoints: sm) {
+  $max-min-font: $max-font-size - $min-font-size;
+  $min-width: bp($breakpoints);
+  $min-fz: rem($min-font-size);
+  $min-fzpx: px($min-width);
+  $inner-min-width: $inner-width - $min-width;
+  @media (min-width: px($inner-width)) {
+    font-size: rem($max-font-size);
+  }
+
+  @media (min-width: px($min-width)) and (max-width: px($inner-width - 0.02)) {
+    font-size: calc(#{$max-min-font} * ((100vw - #{$min-fzpx}) / #{$inner-min-width}) + #{$min-fz});
+  }
+
+  font-size: rem($min-font-size);
+}
+
+@mixin overflow($padding: null,) {
+  $ispadding: $padding != null;
+  margin-right: calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
+  @if $padding {
+    padding-left: calc(50vw - 50%);
+    padding-right: calc(50vw - 50%);
+  }
+}
+
+@mixin font($font-size,$line-height,$letter-spacing) {
+  font-size: rem($font-size);
+  line-height: line-height($line-height,$font-size);
+  letter-spacing: letter-em($letter-spacing);
+}
