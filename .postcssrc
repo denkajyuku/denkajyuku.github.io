@@ -2,10 +2,7 @@
   "modules": true,
   "plugins": {
     "autoprefixer": {
-      "grid": true,
-      "browsers": [
-        "last 2 versions"
-      ]
+      "grid": "autoplace"
     }
   }
 }
