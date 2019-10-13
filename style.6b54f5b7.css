@@ -206,15 +206,16 @@ body {
 ._heading_d94d0 {
   text-align: center;
   font-size: 4rem;
+  margin-bottom: 80px;
 }
 ._heading-sub_d94d0 {
   display: block;
-  margin-top: 15px;
+  margin-top: 20px;
   font-size: 2rem;
 }
 
 ._section_d94d0 {
-  display: block;
+  padding: 80px 0;
 }
 
 /*# sourceMappingURL=/style.6b54f5b7.css.map */
