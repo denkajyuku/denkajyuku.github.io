@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/* -d .",
-    "lint": "stylelint src/**/*.scss src --fix"
+    "lint": "stylelint src/**/*.scss -o src --fix"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
     "pug": "^2.0.4",
     "sass": "^1.23.0",
     "stylelint": "^11.1.1",
+    "stylelint-cli": "^1.2.0",
     "stylelint-config": "^0.1.1",
     "stylelint-config-recess-order": "^2.0.3",
     "stylelint-config-recommended-scss": "^4.0.0",
