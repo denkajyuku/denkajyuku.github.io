@@ -38,19 +38,25 @@ $ npm start
 
 ```
 root
- - .cache
- - node_modules
- - src
- .gitignore
- .postcssrc
- index.html
- package-lock.json
- package.json
- README.md
- script.*.js
- script.*.js.map
- style.*.css
- style.*.css.map
- style.*.js
- style.*.js.map
+ + .cache
+ + node_modules
+ + src
+ - + js
+ - - + modules
+ - - - - module.js
+ - - - script.js
+ - + css
+ - - - style.css
+ - .gitignore
+ - .postcssrc
+ - index.html
+ - package-lock.json
+ - package.json
+ - README.md
+ - script.*.js
+ - script.*.js.map
+ - style.*.css
+ - style.*.css.map
+ - style.*.js
+ - style.*.js.map
 ```
