@@ -141,22 +141,17 @@ button {
   outline: none !important;
 }
 
-@media (min-width: 0px) {
+@media (max-width: -0.02px) {
   ._a_d94d0 {
     color: inherit;
   }
 }
-@media (min-width: 720px) {
+@media (max-width: 719.98px) {
   ._a_d94d0 {
     color: inherit;
   }
 }
-@media (min-width: 1000px) {
-  ._a_d94d0 {
-    color: inherit;
-  }
-}
-@media (min-width: 1200px) {
+@media (max-width: 959.98px) {
   ._a_d94d0 {
     color: inherit;
   }
@@ -166,7 +161,12 @@ button {
     color: inherit;
   }
 }
-@media (max-width: 999.98px) {
+@media (max-width: 1199.98px) {
+  ._a_d94d0 {
+    color: inherit;
+  }
+}
+@media (max-width: 959.98px) {
   ._a_d94d0 {
     color: inherit;
   }
@@ -184,8 +184,12 @@ button {
 :root {
   --breakpoint-sm: 0px;
   --breakpoint-sm: 720px;
-  --breakpoint-md: 1000px;
+  --breakpoint-md: 960px;
   --breakpoint-lg: 1200px;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 @media (max-width: 374.98px) {
@@ -194,13 +198,19 @@ button {
   }
 }
 ._wrapper_d94d0 {
-  max-width: 1030px;
+  max-width: 1230px;
   margin: 0 auto;
   padding: 0 15px 0;
 }
 
 ._heading_d94d0 {
+  text-align: center;
   font-size: 4rem;
+}
+._heading-sub_d94d0 {
+  display: block;
+  margin-top: 15px;
+  font-size: 2rem;
 }
 
 ._section_d94d0 {

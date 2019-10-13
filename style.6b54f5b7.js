@@ -193,6 +193,7 @@ module.exports = {
   "a": "_a_d94d0",
   "wrapper": "_wrapper_d94d0",
   "heading": "_heading_d94d0",
+  "heading-sub": "_heading-sub_d94d0",
   "section": "_section_d94d0"
 };
 },{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -223,7 +224,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51341" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51977" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

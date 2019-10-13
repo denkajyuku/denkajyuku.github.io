@@ -53,7 +53,7 @@
 }
 
 //メディアクエリの設定
-@mixin media($breakpoint: 'sm', $key: min) {
+@mixin media($breakpoint: 'sm', $key: max) {
   @if $key == max
   {
     @media (#{$key}-width: (px(map-get( $breakpoints, $breakpoint )) - 0.02px)) {@content;}

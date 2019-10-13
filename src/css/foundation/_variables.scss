@@ -1,7 +1,7 @@
 
 
 //カンプのインナー横幅
-$inner-width: 1000;
+$inner-width: 1200;
 //スマホ時の左右のpadding
 $wrapper-padding: 15;
 
@@ -9,8 +9,8 @@ $wrapper-padding: 15;
 $breakpoints: (
   xs: 0,
   sm: 720,
-  md: $inner-width,
-  lg: 1200,
+  md: 960,
+  lg: $inner-width,
 );
 
 //0〜374.98以下は縮小
