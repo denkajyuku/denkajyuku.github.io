@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/* -d .",
-    "lint": "stylelint src/**/*.scss -o src --fix"
+    "lint": "stylelint src/css/**/*.scss"
   },
   "repository": {
     "type": "git",
