@@ -1,11 +1,21 @@
 $colors: (
   text: (
+    black: #000,
     white: #fff,
   ),
   bg: (
     white: #fff,
+    yellow: #ffd105,
+    yellow-light: #f8e697,
+    blue: #1da1f2,
+    black: #1d1d1d,
   ),
   bd: (
     blue: #080058,
+    yellow: #ffd105,
+    gray: #404040,
+  ),
+  button: (
+    red: #ff0505,
   )
 );
