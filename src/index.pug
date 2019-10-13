@@ -1,7 +1,16 @@
 doctype html
 html
-  include _includes/header.pug
+  include _includes/head.pug
   body
-    h1 My Site
-    p Welcome to my super lame site.
+    include _includes/header.pug
+    .wrapper
+      include _sections/section1.pug
+      include _sections/section2.pug
+      include _sections/section3.pug
+      include _sections/section4.pug
+      include _sections/section5.pug
+      include _sections/section6.pug
+      include _sections/section7.pug
+      include _sections/section8.pug
+      include _sections/section9.pug
     include _includes/footer.pug
