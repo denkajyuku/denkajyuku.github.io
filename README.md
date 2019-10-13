@@ -129,7 +129,7 @@ root
 <div class="block__hoge_huga"><div>
 <div class="block__hogeHuga"><div>
 ```
-3. Elementの中にmodifire以外をネストするのはNG。
+3. Elementの中でElementまたは、BlockをネストするのはNG。
 ```html
 <!-- NG -->
 <div class="block__element__block"><div>
