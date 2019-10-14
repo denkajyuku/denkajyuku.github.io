@@ -1,1 +1,27 @@
-.section1 {}
+.section09{
+  .heading{
+    position: relative;
+    &::before,
+    &::after{
+      position: absolute;
+      top: 10px;
+      content: '';
+      display: inline-block;
+      width: 80px;
+      height: 2px;
+      background-color: #000;
+    }
+    &::before{
+      left: 50%;
+      transform: translateX(calc(-50% - 5em)) rotate(50deg);
+    }
+    &::after{
+      left: 50%;
+      transform: translateX(calc(-50% + 5em)) rotate(-50deg);
+    }
+
+    &-sub{
+      margin-top: 60px;
+    }
+  }
+}
